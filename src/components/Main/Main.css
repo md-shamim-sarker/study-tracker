@@ -46,3 +46,44 @@
 .std-btn {
     width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header-part {
+        background-color: antiquewhite;
+        border-radius: 10px;
+        height: 8rem;
+    }
+
+    .left-side {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-side {
+        padding: 10;
+        margin: 1rem;
+        height: auto;
+        position: static;
+        border-radius: 10px;
+    }
+
+    .subject-cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        margin: 1rem;
+    }
+
+    .header-part {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

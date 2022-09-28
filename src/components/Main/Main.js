@@ -41,26 +41,25 @@ const Main = () => {
 
     return (
         <div className='main'>
-            <div>
-                <div className='left-side'>
-                    <div className='header-part'>
-                        <div className='logo-part'>
-                            <img src={logo} alt="logo" />
-                            <h2>Study Tracker</h2>
-                        </div>
-                        <h3>Subject Selection Part</h3>
+            <div className='left-side'>
+                <div className='header-part'>
+                    <div className='logo-part'>
+                        <img src={logo} alt="logo" />
+                        <h2>Study Tracker</h2>
                     </div>
-                    <div className='subject-cards'>
-                        {
-                            subjects.map(subject => <Study
-                                key={subject.id}
-                                subject={subject}
-                                timeController={timeController}
-                            ></Study>)
-                        }
-                    </div>
+                    <h3>Subject Selection Part</h3>
+                </div>
+                <div className='subject-cards'>
+                    {
+                        subjects.map(subject => <Study
+                            key={subject.id}
+                            subject={subject}
+                            timeController={timeController}
+                        ></Study>)
+                    }
                 </div>
             </div>
+
             <div className='right-side'>
                 <Myself></Myself>
                 <h2>Add A Break</h2>

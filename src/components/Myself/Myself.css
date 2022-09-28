@@ -16,6 +16,9 @@
 .info-part {
     background-color: #dacece;
     border-radius: 5px;
-    padding: 1px;
     margin-top: 1rem;
+}
+
+.info-part>p {
+    padding: 0.8rem;
 }
