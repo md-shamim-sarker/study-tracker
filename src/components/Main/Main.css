@@ -7,22 +7,27 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin: 5rem;
+    margin: 2rem 5rem;
 }
 
 .right-side {
     background-color: bisque;
+    padding: 1.5rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
-/* .logo-part {
-    display: flex;
-} */
-
 .header-part {
-    /* margin: 2rem 0 0 2rem; */
+    margin: 2rem 0 0 2rem;
     display: flex;
 }
 
 .header-part>img {
     width: 10rem;
+}
+
+.break-btn-container {
+    display: flex;
+    gap: 5px;
 }

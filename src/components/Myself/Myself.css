@@ -1,0 +1,21 @@
+.myself {
+    text-align: center;
+}
+
+.img-part {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.img-part>img {
+    width: 4rem;
+    border-radius: 100%;
+}
+
+.info-part {
+    background-color: #dacece;
+    border-radius: 5px;
+    padding: 1px;
+    margin-top: 1rem;
+}
