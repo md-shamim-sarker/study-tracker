@@ -1,0 +1,10 @@
+.question {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin: 1rem 0;
+    box-shadow: 5px 5px 10px #c3bfbf;
+}
+
+.question>div {
+    padding: 0.5rem 1rem;
+}

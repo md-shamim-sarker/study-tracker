@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "question": "How does react work?",
+        "answer": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it."
+    },
+    {
+        "id": "2",
+        "question": "What are the defference between state and props?",
+        "answer": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it."
+    },
+    {
+        "id": "3",
+        "question": "Write some uses of useEffect hook without data load.",
+        "answer": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it."
+    }
+]

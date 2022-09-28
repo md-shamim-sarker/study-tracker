@@ -5,11 +5,13 @@ import logo from '../../images/logo.svg';
 import Myself from '../Myself/Myself';
 import Breakbutton from '../Breakbutton/Breakbutton';
 import Swal from 'sweetalert2';
+import Question from '../Question/Question';
 
 const Main = () => {
     const [subjects, setSubjects] = useState([]);
-    const [breaks, setBreaks] = useState(localStorage.getItem('break-time'));
-    const [times, setTimes] = useState(localStorage.getItem('study-time'));
+    const [questions, setQuestions] = useState([]);
+    const [breaks, setBreaks] = useState(0);
+    const [times, setTimes] = useState(0);
 
     useEffect(() => {
         fetch('./data.json')
@@ -18,24 +20,55 @@ const Main = () => {
             .catch(err => console.error(err));
     }, []);
 
-    const breakController = (time) => {
-        setBreaks(time);
-    };
+    useEffect(() => {
+        fetch('./question.json')
+            .then(res => res.json())
+            .then(res => setQuestions(res))
+            .catch(err => console.error(err));
+    }, []);
 
-    const timeController = (time) => {
-        setTimes(Number(times) + time);
-    };
+    useEffect(() => {
+        const storedBreakTime = Number(localStorage.getItem('break-time'));
+        const storedStudyTime = Number(localStorage.getItem('study-time'));
+        if(storedBreakTime) {
+            setBreaks(storedBreakTime);
+        }
+        if(storedStudyTime) {
+            setTimes(storedStudyTime);
+        }
+    }, []);
 
     useEffect(() => {
         localStorage.setItem('break-time', breaks);
         localStorage.setItem('study-time', times);
     }, [breaks, times]);
 
+    const breakController = breakTime => {
+        setBreaks(breakTime);
+    };
+
+    const timeController = studyTime => {
+        setTimes(times + studyTime);
+    };
+
     const studyComplete = () => {
         Swal.fire(
             'Good job!',
-            'You clicked the button!',
-            'success'
+            'You have completed your study!',
+            'Success'
+        );
+    };
+
+    const clearStorage = () => {
+        localStorage.removeItem('break-time');
+        localStorage.removeItem('study-time');
+
+        setBreaks(0);
+        setTimes(0);
+
+        Swal.fire(
+            'Success',
+            'Local storage is cleared!'
         );
     };
 
@@ -61,21 +94,37 @@ const Main = () => {
             </div>
 
             <div className='right-side'>
-                <Myself></Myself>
-                <h2>Add A Break</h2>
-                <div className='break-btn-container'>
-                    <Breakbutton time={10} breakController={breakController}></Breakbutton>
-                    <Breakbutton time={15} breakController={breakController}></Breakbutton>
-                    <Breakbutton time={20} breakController={breakController}></Breakbutton>
-                    <Breakbutton time={25} breakController={breakController}></Breakbutton>
-                    <Breakbutton time={30} breakController={breakController}></Breakbutton>
+                <div className='activity'>
+                    <Myself></Myself>
+                    <h3>Add A Break</h3>
+                    <div className='break-btn-container'>
+                        <Breakbutton time={10} breakController={breakController}></Breakbutton>
+                        <Breakbutton time={15} breakController={breakController}></Breakbutton>
+                        <Breakbutton time={20} breakController={breakController}></Breakbutton>
+                        <Breakbutton time={25} breakController={breakController}></Breakbutton>
+                        <Breakbutton time={30} breakController={breakController}></Breakbutton>
+                    </div>
+                    <h3>Study Details</h3>
+                    <h5 className='time'>
+                        <span>Study Time:</span>
+                        <span className='gray'>{times} Hours</span>
+                    </h5>
+                    <h5 className='time'>
+                        <span>Break Time:</span>
+                        <span className='gray'>{breaks} Minutes</span>
+                    </h5>
+                    <button onClick={studyComplete} className='btn'>Study Completed</button>
+                    <button onClick={clearStorage} className='btn'>Clear Storage</button>
                 </div>
-                <h2>Study Details</h2>
-                <h4>Study Time: {times} Hours</h4>
-                <h4>Break Time: {breaks} Minutes</h4>
-                <button onClick={studyComplete} className='btn'>Study Completed</button>
             </div>
-
+            <div className='question-answer'>
+                {
+                    questions.map(question => <Question
+                        key={question.id}
+                        question={question}
+                    ></Question>)
+                }
+            </div>
         </div>
     );
 };
