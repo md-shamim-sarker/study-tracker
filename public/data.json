@@ -1,0 +1,74 @@
+[
+    {
+        "id": "633473e97950bc173101371e",
+        "subject": "Bangla",
+        "details": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Easy",
+        "time": 1,
+        "image": "https://i.ibb.co/LrW2MDF/bangla.jpg"
+    },
+    {
+        "id": "633473e940373772ee1eee98",
+        "subject": "English",
+        "details": "English is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Hard",
+        "time": 3,
+        "image": "https://i.ibb.co/fpXw3p0/english.jpg"
+    },
+    {
+        "id": "633473e9e21a150d65f63f90",
+        "subject": "Mathematics",
+        "details": "Mathematics is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Medium",
+        "time": 2,
+        "image": "https://i.ibb.co/bQDsLS1/mathematics.jpg"
+    },
+    {
+        "id": "633473e96e0511643c91fa50",
+        "subject": "Physics",
+        "details": "Physics is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Hard",
+        "time": 3,
+        "image": "https://i.ibb.co/qdcg5zW/physics.jpg"
+    },
+    {
+        "id": "633473e9347bf16363101f93",
+        "subject": "Chemistry",
+        "details": "Chemistry is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Hard",
+        "time": 3,
+        "image": "https://i.ibb.co/X401WTG/chemistry.jpg"
+    },
+    {
+        "id": "633473e9961c509c6b03a387",
+        "subject": "Biology",
+        "details": "Biology is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Hard",
+        "time": 3,
+        "image": "https://i.ibb.co/bJpcvXq/biology.jpg"
+    },
+    {
+        "id": "633473e99593009078095c94",
+        "subject": "ICT",
+        "details": "ICT is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Medium",
+        "time": 2,
+        "image": "https://i.ibb.co/cXwGGZM/ict.jpg"
+    },
+    {
+        "id": "633473e945f2f5e6bf0c8300",
+        "subject": "BGS",
+        "details": "BGS is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Easy",
+        "time": 1,
+        "image": "https://i.ibb.co/KGw7GF3/history.jpg"
+    },
+    {
+        "id": "633473e98bb5943297a03cf2",
+        "subject": "Higher Math",
+        "details": "Higher Math is a very importand subject to get a better result in the final examination. So, I have to concentrate on it.",
+        "difficulty": "Hard",
+        "time": 3,
+        "image": "https://i.ibb.co/sWt3fJQ/higher-math.jpg"
+    }
+]
