@@ -1,0 +1,28 @@
+.main {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.subject-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 5rem;
+}
+
+.right-side {
+    background-color: bisque;
+}
+
+/* .logo-part {
+    display: flex;
+} */
+
+.header-part {
+    /* margin: 2rem 0 0 2rem; */
+    display: flex;
+}
+
+.header-part>img {
+    width: 10rem;
+}

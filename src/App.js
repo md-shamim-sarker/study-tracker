@@ -1,11 +1,13 @@
+import React from 'react';
 import './App.css';
+import Main from './components/Main/Main';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h2>Environment is ready!!!!!!!!!!!</h2>
+    <div className='App'>
+      <Main></Main>
     </div>
   );
-}
+};
 
 export default App;
