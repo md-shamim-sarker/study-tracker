@@ -31,3 +31,7 @@
     display: flex;
     gap: 5px;
 }
+
+.std-btn {
+    width: 100%;
+}

@@ -7,7 +7,8 @@ import Breakbutton from '../Breakbutton/Breakbutton';
 
 const Main = () => {
     const [subjects, setSubjects] = useState([]);
-    const [breaks, setBreaks] = useState(localStorage.getItem('time'));
+    const [breaks, setBreaks] = useState(localStorage.getItem('break-time'));
+    const [times, setTimes] = useState(localStorage.getItem('study-time'));
 
     useEffect(() => {
         fetch('./data.json')
@@ -18,8 +19,17 @@ const Main = () => {
 
     const breakController = (time) => {
         setBreaks(time);
-        localStorage.setItem('time', time);
     };
+
+    const timeController = (time) => {
+        setTimes(Number(times) + time);
+
+    };
+
+    useEffect(() => {
+        localStorage.setItem('break-time', breaks);
+        localStorage.setItem('study-time', times);
+    }, [breaks, times]);
 
     return (
         <div className='main'>
@@ -37,6 +47,7 @@ const Main = () => {
                             subjects.map(subject => <Study
                                 key={subject.id}
                                 subject={subject}
+                                timeController={timeController}
                             ></Study>)
                         }
                     </div>
@@ -52,8 +63,12 @@ const Main = () => {
                     <Breakbutton time={25} breakController={breakController}></Breakbutton>
                     <Breakbutton time={30} breakController={breakController}></Breakbutton>
                 </div>
-                <h2>{breaks}m</h2>
+                <h2>Study Details</h2>
+                <h4>Study Time: {times} Hours</h4>
+                <h4>Break Time: {breaks} Minutes</h4>
+                <button className='btn'>Study Completed</button>
             </div>
+
         </div>
     );
 };

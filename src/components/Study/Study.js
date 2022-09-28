@@ -4,6 +4,7 @@ import './Study.css';
 const Study = (props) => {
 
     const {subject, details, difficulty, time, image} = props.subject;
+    const {timeController} = props;
 
     return (
         <div className='study'>
@@ -13,7 +14,7 @@ const Study = (props) => {
                 <small>{details}</small><br /><br />
                 <small><strong>Difficulty Level: {difficulty}</strong></small><br />
                 <small><strong>Required Time: {time}</strong></small><br /><br />
-                <button>Start Study</button>
+                <button className='btn' onClick={() => timeController(time)}>Start Study</button>
             </div>
         </div>
     );
