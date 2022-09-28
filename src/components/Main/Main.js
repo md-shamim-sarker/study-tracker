@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Study from '../Study/Study';
 import './Main.css';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 import Myself from '../Myself/Myself';
 import Breakbutton from '../Breakbutton/Breakbutton';
+import Swal from 'sweetalert2';
 
 const Main = () => {
     const [subjects, setSubjects] = useState([]);
@@ -23,7 +24,6 @@ const Main = () => {
 
     const timeController = (time) => {
         setTimes(Number(times) + time);
-
     };
 
     useEffect(() => {
@@ -31,16 +31,24 @@ const Main = () => {
         localStorage.setItem('study-time', times);
     }, [breaks, times]);
 
+    const studyComplete = () => {
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        );
+    };
+
     return (
         <div className='main'>
             <div>
                 <div className='left-side'>
                     <div className='header-part'>
-                        <img src={logo} alt="logo" />
-                        <div>
+                        <div className='logo-part'>
+                            <img src={logo} alt="logo" />
                             <h2>Study Tracker</h2>
-                            <h3>Subject Selection</h3>
                         </div>
+                        <h3>Subject Selection Part</h3>
                     </div>
                     <div className='subject-cards'>
                         {
@@ -66,7 +74,7 @@ const Main = () => {
                 <h2>Study Details</h2>
                 <h4>Study Time: {times} Hours</h4>
                 <h4>Break Time: {breaks} Minutes</h4>
-                <button className='btn'>Study Completed</button>
+                <button onClick={studyComplete} className='btn'>Study Completed</button>
             </div>
 
         </div>

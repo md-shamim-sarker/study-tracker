@@ -19,12 +19,23 @@
 }
 
 .header-part {
-    margin: 2rem 0 0 2rem;
-    display: flex;
+    margin: 2rem 0 0 5rem;
 }
 
-.header-part>img {
-    width: 10rem;
+.logo-part {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: blue;
+}
+
+.header-part img {
+    width: 2rem;
+}
+
+.header-part h3 {
+    color: gray;
+    margin-top: 0;
 }
 
 .break-btn-container {

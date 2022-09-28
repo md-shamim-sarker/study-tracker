@@ -20,6 +20,10 @@
     text-align: left;
 }
 
+.details {
+    color: gray;
+}
+
 .study-info>h2 {
     margin: 0;
     padding: 0;
