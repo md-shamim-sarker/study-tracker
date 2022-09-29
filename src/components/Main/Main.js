@@ -63,7 +63,7 @@ const Main = () => {
         Swal.fire(
             'Good job!',
             'You have completed your study!',
-            'Success'
+            'success'
         );
     };
 
@@ -76,8 +76,8 @@ const Main = () => {
         setStudyTime(0);
 
         Swal.fire(
-            'Good job!',
-            'You cleared local storage!',
+            'Success!',
+            'You have cleared local storage!',
             'success'
         );
     };
