@@ -1,14 +1,14 @@
 .study {
-    background-color: antiquewhite;
+    background-color: #f9e4c9;
+    border: 2px solid transparent;
     box-shadow: 5px 5px 10px #c3bfbf;
     border-radius: 10px;
     overflow: hidden;
-    transition: all ease 0.4s;
 }
 
 .study:hover {
-    transform: scale(1.02);
     cursor: pointer;
+    border: 2px solid #edb873;
 }
 
 .study img {

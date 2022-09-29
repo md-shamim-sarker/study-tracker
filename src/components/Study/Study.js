@@ -7,7 +7,7 @@ const Study = (props) => {
     const {timeController} = props;
 
     return (
-        <div className='study'>
+        <div className='study' data-aos="fade-up">
             <img src={image} alt="subject_image" />
             <div className='study-info'>
                 <h2>{subject}</h2><br />

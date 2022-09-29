@@ -6,6 +6,7 @@
     box-shadow: 2px 2px 5px gray inset;
     font-weight: bold;
     transition: all ease 0.4s;
+    color: #413d3d;
 }
 
 .break-button>button:hover {

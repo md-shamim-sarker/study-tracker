@@ -106,7 +106,7 @@ const Main = () => {
             {/* -----------------Left Side End------------------- */}
 
             {/* -----------------Right Side Start------------------- */}
-            <div className='right-side'>
+            <div className='right-side' data-aos="fade-up">
                 <div className='activity'>
                     <Myself></Myself>
                     <h3>Add A Break</h3>
@@ -134,6 +134,12 @@ const Main = () => {
 
             {/* -----------------Question & Answer Start------------------- */}
             <div className='question-answer'>
+                <h2 style={{
+                    textAlign: "center",
+                    marginBottom: "4rem",
+                    fontSize: "2rem",
+                    color: "#4848f5"
+                }} data-aos="fade-up">Question & Answer</h2>
                 {
                     questions.map(question => <Question
                         key={question.id}
