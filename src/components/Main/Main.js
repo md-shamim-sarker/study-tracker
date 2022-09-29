@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import Question from '../Question/Question';
 
 const Main = () => {
+    // Declare all states
     const [subjects, setSubjects] = useState([]);
     const [questions, setQuestions] = useState([]);
     const [breakTime, setBreakTime] = useState(0);
@@ -29,10 +30,11 @@ const Main = () => {
             .catch(err => console.error(err));
     }, []);
 
-    // Data retrieve from local storage after reload
+    // Data retrieve from local storage after reload and set it to state
     useEffect(() => {
         const storedBreakTime = Number(localStorage.getItem('break-time'));
         const storedStudyTime = Number(localStorage.getItem('study-time'));
+
         if(storedBreakTime) {
             setBreakTime(storedBreakTime);
         }
