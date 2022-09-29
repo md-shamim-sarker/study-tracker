@@ -2,16 +2,16 @@
     {
         "id": "1",
         "question": "How does react work?",
-        "answer": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it."
+        "answer": "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. ReactJS is an open-source, component-based frontend library responsible only for the view layer of the application. ReactJS divides the UI into isolated reusable pieces of code known as components. React components work similarly to JavaScript functions as they accept arbitrary inputs called properties or props. It's possible to have as many components as necessary without cluttering our code."
     },
     {
         "id": "2",
         "question": "What are the defference between state and props?",
-        "answer": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it."
+        "answer": "Simply put, State is the local state of the component which cannot be accessed and modified outside of the component. It's equivalent to local variables in a function. Props, on the other hand, make components reusable by giving components the ability to receive data from their parent component in the form of props."
     },
     {
         "id": "3",
         "question": "Write some uses of useEffect hook without data load.",
-        "answer": "Bangla is a very importand subject to get a better result in the final examination. So, I have to concentrate on it."
+        "answer": "(1) Running on state change: validating input field (2) Running on state change: live filtering (3) Running on state change: trigger animation on new array value (4) Running on props change: update paragraph list on fetched API data update (5)Running on props change: updating fetched API data to get BTC updated price"
     }
 ]

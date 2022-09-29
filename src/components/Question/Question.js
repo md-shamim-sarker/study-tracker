@@ -6,8 +6,8 @@ const Question = (props) => {
     return (
         <div className='question'>
             <div>
-                <h2>Question-{id}. {question}</h2>
-                <h4>Answer: {answer}</h4>
+                <h2><strong>Question-{id}:</strong> {question}</h2>
+                <p><strong>Answer:</strong> {answer}</p>
             </div>
         </div>
     );
