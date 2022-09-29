@@ -80,7 +80,7 @@ const Main = () => {
                         <img src={logo} alt="logo" />
                         <h2>Study Tracker</h2>
                     </div>
-                    <h3>Subject Selection Part</h3>
+                    <h3>Subject Selection</h3>
                 </div>
                 <div className='subject-cards'>
                     {

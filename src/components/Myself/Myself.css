@@ -14,9 +14,10 @@
 }
 
 .info-part {
-    background-color: #dacece;
+    background-color: white;
     border-radius: 5px;
     margin-top: 1rem;
+    color: #535151;
 }
 
 .info-part>p {

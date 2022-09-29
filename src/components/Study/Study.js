@@ -14,7 +14,7 @@ const Study = (props) => {
                 <small className='details'>{details}</small><br /><br />
                 <small><strong>Difficulty Level: {difficulty}</strong></small><br />
                 <small><strong>Required Time: {time}</strong></small><br /><br />
-                <button className='btn' onClick={() => timeController(time)}>Start Study</button>
+                <button className='btn' onClick={() => timeController(time)}>Select Subject</button>
             </div>
         </div>
     );

@@ -15,7 +15,7 @@
 }
 
 .right-side {
-    background-color: bisque;
+    background-color: antiquewhite;
     padding: 1.5rem;
     height: 100vh;
     position: sticky;
@@ -45,6 +45,9 @@
 .break-btn-container {
     display: flex;
     justify-content: space-between;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
 }
 
 .std-btn {
@@ -55,23 +58,27 @@
     width: 100%;
     padding: 0.4rem 0;
     margin: 0.3rem 0;
-    border: 2px solid #15157c;
-    background-color: #41418b;
+    border: none;
+    background-color: #7066e0;
     color: white;
     border-radius: 5px;
     transition: all ease 0.4s;
+    font-weight: bold;
 }
 
-.btn:hover {
-    background-color: #0c0c6b;
+.btn:hover,
+.btn:focus {
+    background-color: blue;
     cursor: pointer;
 }
 
 .time {
     background-color: white;
+    margin: 0.5rem 0;
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
+    border-radius: 5px;
 }
 
 .gray {
@@ -122,5 +129,9 @@
 
     .logo-part>h2 {
         font-size: 2.5rem;
+    }
+
+    .btn {
+        padding: 0.8rem 0;
     }
 }
