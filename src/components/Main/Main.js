@@ -10,9 +10,10 @@ import Question from '../Question/Question';
 const Main = () => {
     const [subjects, setSubjects] = useState([]);
     const [questions, setQuestions] = useState([]);
-    const [breaks, setBreaks] = useState(0);
-    const [times, setTimes] = useState(0);
+    const [breakTime, setBreakTime] = useState(0);
+    const [studyTime, setStudyTime] = useState(0);
 
+    // Subject data loading
     useEffect(() => {
         fetch('./data.json')
             .then(res => res.json())
@@ -20,6 +21,7 @@ const Main = () => {
             .catch(err => console.error(err));
     }, []);
 
+    // Question & answer data loading
     useEffect(() => {
         fetch('./question.json')
             .then(res => res.json())
@@ -27,30 +29,36 @@ const Main = () => {
             .catch(err => console.error(err));
     }, []);
 
+    // Data retrieve from local storage after reload
     useEffect(() => {
         const storedBreakTime = Number(localStorage.getItem('break-time'));
         const storedStudyTime = Number(localStorage.getItem('study-time'));
         if(storedBreakTime) {
-            setBreaks(storedBreakTime);
+            setBreakTime(storedBreakTime);
         }
         if(storedStudyTime) {
-            setTimes(storedStudyTime);
+            setStudyTime(storedStudyTime);
         }
     }, []);
 
+
+    // Set data to local storage for future use
     useEffect(() => {
-        localStorage.setItem('break-time', breaks);
-        localStorage.setItem('study-time', times);
-    }, [breaks, times]);
+        localStorage.setItem('break-time', breakTime);
+        localStorage.setItem('study-time', studyTime);
+    }, [breakTime, studyTime]);
 
-    const breakController = breakTime => {
-        setBreaks(breakTime);
+    // State management for break time
+    const breakController = time => {
+        setBreakTime(time);
     };
 
-    const timeController = studyTime => {
-        setTimes(times + studyTime);
+    // State management for study time
+    const timeController = time => {
+        setStudyTime(studyTime + time);
     };
 
+    // Show alert/toast after clicking 'Study Completed' button
     const studyComplete = () => {
         Swal.fire(
             'Good job!',
@@ -59,21 +67,24 @@ const Main = () => {
         );
     };
 
+    // Clear the local storage item wise
     const clearStorage = () => {
         localStorage.removeItem('break-time');
         localStorage.removeItem('study-time');
 
-        setBreaks(0);
-        setTimes(0);
+        setBreakTime(0);
+        setStudyTime(0);
 
         Swal.fire(
-            'Success',
-            'Local storage is cleared!'
+            'Good job!',
+            'You cleared local storage!',
+            'success'
         );
     };
 
     return (
         <div className='main'>
+            {/* -----------------Left Side Start------------------- */}
             <div className='left-side'>
                 <div className='header-part'>
                     <div className='logo-part'>
@@ -92,7 +103,9 @@ const Main = () => {
                     }
                 </div>
             </div>
+            {/* -----------------Left Side End------------------- */}
 
+            {/* -----------------Right Side Start------------------- */}
             <div className='right-side'>
                 <div className='activity'>
                     <Myself></Myself>
@@ -107,16 +120,19 @@ const Main = () => {
                     <h3>Study Details</h3>
                     <h5 className='time'>
                         <span>Study Time:</span>
-                        <span className='gray'>{times} {times <= 1 ? "Hour" : "Hours"}</span>
+                        <span className='gray'>{studyTime} {studyTime <= 1 ? "Hour" : "Hours"}</span>
                     </h5>
                     <h5 className='time'>
                         <span>Break Time:</span>
-                        <span className='gray'>{breaks} {breaks <= 1 ? "Minute" : "Minutes"}</span>
+                        <span className='gray'>{breakTime} {breakTime <= 1 ? "Minute" : "Minutes"}</span>
                     </h5>
                     <button onClick={studyComplete} className='btn'>Study Completed</button>
                     <button onClick={clearStorage} className='btn'>Clear Storage</button>
                 </div>
             </div>
+            {/* -----------------Right Side End------------------- */}
+
+            {/* -----------------Question & Answer Start------------------- */}
             <div className='question-answer'>
                 {
                     questions.map(question => <Question
@@ -125,6 +141,7 @@ const Main = () => {
                     ></Question>)
                 }
             </div>
+            {/* -----------------Question & Answer End------------------- */}
         </div>
     );
 };
