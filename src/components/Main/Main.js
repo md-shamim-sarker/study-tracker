@@ -107,11 +107,11 @@ const Main = () => {
                     <h3>Study Details</h3>
                     <h5 className='time'>
                         <span>Study Time:</span>
-                        <span className='gray'>{times} Hours</span>
+                        <span className='gray'>{times} {times <= 1 ? "Hour" : "Hours"}</span>
                     </h5>
                     <h5 className='time'>
                         <span>Break Time:</span>
-                        <span className='gray'>{breaks} Minutes</span>
+                        <span className='gray'>{breaks} {breaks <= 1 ? "Minute" : "Minutes"}</span>
                     </h5>
                     <button onClick={studyComplete} className='btn'>Study Completed</button>
                     <button onClick={clearStorage} className='btn'>Clear Storage</button>
